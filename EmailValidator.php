@@ -3,7 +3,7 @@
 /**
  * Estende CEmailValidator e aggiunge il controllo dell'esistenza del dominio.
  * @author Maurizio Cingolani <mauriziocingolani74@gmail.com>
- * @version 1.0.1
+ * @version 1.0.2
  */
 class EmailValidator extends CEmailValidator {
 
@@ -14,6 +14,8 @@ class EmailValidator extends CEmailValidator {
      * @return boolean True se il dominio dell'indirizzo è valido, false altrimenti
      */
     public function validateValue($value) {
+        if ($value == null || strlen(trim($value)) == 0)
+            return true;
         if (parent::validateValue($value)) :
             list($address, $host) = explode('@', $value);
             return checkdnsrr($host);
