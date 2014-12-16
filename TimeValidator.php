@@ -9,7 +9,7 @@
  */
 class TimeValidator extends CValidator {
 
-    /** Pattern di validazione dell'oraio in formato HH:MM */
+    /** Pattern di validazione dell'orario in formato HH:MM */
     public $pattern = '^(1?[0-9]|2[0-3]):[0-5][0-9]$';
 
     /** Implementazione vuota (restituisce sempre true) del metodo
